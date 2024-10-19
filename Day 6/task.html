@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Template</title>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  let root = ReactDOM.createRoot(document.getElementById("root"));
+
+  let TaskPerform = ({ID,checked, htmlFor,taskName}) => {
+    return(
+      <div className="task">
+        <input type="checkbox" id = {ID} checked = {checked}/>
+       <label htmlfor= {htmlFor}>{taskName}</label>
+      </div> 
+    )
+  }
+
+  function App() {
+    return (
+      <div className="task-list">
+        <TaskPerform id="task1" checked={false} htmlFor="task1" taskName = "task1"/>
+        <TaskPerform id="task2" checked={true} htmlFor="task2" taskName = "task2"/>
+        <TaskPerform id="task3" checked={false} htmlFor="task3" taskName = "task3"/>
+      </div>
+    );
+  }
+
+  root.render(<App />);
+</script>
+
+</html>

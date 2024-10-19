@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Template</title>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+
+
+  let root = ReactDOM.createRoot(document.getElementById("root"))
+  let Profile = ({name, age, image}) => {
+    return (
+      <div className="profileData">
+        <img src={image} alt={name} />
+        <h1>Name : {name}</h1>
+        <h2>Age : {age}</h2>
+      </div>
+    )
+  }
+  let App = () => {
+    return (
+      <div>
+        <Profile name="Soni" age="18" image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuupcwOyd2GEMtisHLvsgQ_2Pbvz4WV8i5EOxjtMqOVXAW2jdnip6nUFKZLQexSrNDh6I&usqp=CAU" />
+        <Profile name="Ayush" age="19" image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzqqS7VaY8rJbe82F_YgbpCgc61aXknv3eJOFOL-Lig8vgywuxkjplfBL9e-KefWcEQQw&usqp=CAU" />
+        <Profile name="Piyush" age="21" image="https://i.pinimg.com/736x/6c/81/e3/6c81e360950ade266634dcca9fc86e3b.jpg" />
+      </div>
+    )
+  }
+  root.render(<App />)
+
+</script>
+</html>
